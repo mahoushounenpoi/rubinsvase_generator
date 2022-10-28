@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="sketch_221016b.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.dom.js"></script>
+
+  <!-- This line removes any default padding and style.
+       You might only need one of these values set. -->
+  <style> 
+    body 
+    { 
+      padding: 0; 
+      margin: 0; 
+      height:calc(100vh)*2; 
+      width:100%;
+      background-color: #262121;
+      text-align: center;
+    } 
+
+    .sample
+    {
+      background-color: #262121;
+      color: #ffffff;
+      padding-top: 20%;
+      margin-bottom: 0px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      height:calc(100vh); 
+      display: block;
+      text-align: center;
+    }
+
+    .sample2
+    {
+      background-color: #262121;
+      color: #ffffff;
+      padding-top: 5%;
+      margin-bottom: 0px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      height:calc(100vh); 
+      display: block;
+      text-align: center;
+    }
+
+    h1
+    {
+      font-size: 24pt;
+      letter-spacing:8pt;
+      line-height: 36pt;
+    }
+
+    p
+    {
+      height: 3%;
+      display: block;
+      background-color: #262121;
+    }
+
+    input
+    {
+      margin-top: 2%;
+      width:600px;
+      height:40px;
+      font-size: 12pt;
+      letter-spacing: 2pt;
+      border-radius: 40px;
+      text-align: center;
+      stroke-width: 0%;
+    }
+
+    button
+    {
+      text-align: center;
+      width:150px;
+      height:40px;
+      font-size: 12pt;
+      letter-spacing: 2pt;
+      border-radius: 40px;
+      font-weight: bold;
+      background:linear-gradient(115deg,#FF87D1,#fcb0db,#dcfefd,#A9FCFC);    
+    }
+
+  </style>     
+
+</head>
+<body class="container-fluid">
+  <div id="app" class="sample">
+    <h1>pattern generator sample</h1>
+
+    <input id="input" placeholder="请输入手机号/身份证号/出生日期等数字信息">
+    <p></p>
+    
+    <!--<router-view>
+    </router-view>-->
+    <button id="but">点一下试试</button>
+  </div>
+  <div id="app2" class="sample">
+
+  </div>
+</body>
+
+
+<!--<script>
+  
+  const Home = { template: '<div id="temp1"><input :value="text" placeholder="请输入手机号/qq号/身份证号/生日等数字"></div>' }
+  const result = { template: '<div id="temp2">result</div>' }
+
+
+  const routes = [
+   { path: '/', component: Home },
+   { path: '/result', component: result },
+  ]
+
+
+  const router = VueRouter.createRouter({
+
+    history: VueRouter.createWebHashHistory(),
+    routes, // `routes: routes` 的缩写
+  })
+
+
+  const app = Vue.createApp({})
+  app.use(router)
+  app.mount('#app')
+</script>-->
+
+
+</html>
