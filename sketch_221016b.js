@@ -124,6 +124,7 @@ function changestr()
     str=str;
   }
   console.log(str);
+  drawtheshape(str);
 }
 
 function drawtheshape(st)
@@ -161,6 +162,8 @@ function drawtheshape(st)
   s2.rule2_scale(dis2);
   s2.rule3_symmx();
 
+  background(color(0,15,15));
+
   for (var j = 0; j <= strrr.length - 1; j++) {
       for (let k = 0; k <= strrr.length - 1; k++) {
           var col1 = s1.i3[j].c1;
@@ -170,6 +173,7 @@ function drawtheshape(st)
           c.drawashape();
       }
   }
+  
   s1.drawashape2();
   s2.drawashape2();
 }
