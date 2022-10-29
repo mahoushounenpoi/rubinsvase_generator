@@ -106,25 +106,25 @@ class n1 //基于初始形状的派生形状
   }
 }
 
-var str;
+var mes;
 var cavas;
 var but;
 
 function changestr()
 {
-  var input=select('#input');
-  var st=input.value().toString();
+  var inp=select('#inp');
+  var st=inp.value().toString();
   console.log(st);
   if(st!=null)
   {
-    str=st;
+    mes=st;
   }
   else
   {
-    str=str;
+    mes=mes;
   }
-  console.log(str);
-  drawtheshape(str);
+  console.log(mes);
+  drawtheshape(mes);
 }
 
 function drawtheshape(st)
@@ -183,7 +183,7 @@ function setup() {
     initializeFields();
     //var wid = document.body.clientWidth;
     //var heig = document.body.clientHeight;
-    str="23423465476978452343578978070";
+    mes="23423465476978452343578978070";
     but=select('#but');
     but.mousePressed(changestr);
     cavas=createCanvas(1500, 1500);
@@ -198,7 +198,7 @@ function setup() {
 }
 
 function draw() {
-  drawtheshape(str);
+  drawtheshape(mes);
 }
 
 
