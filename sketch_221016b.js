@@ -94,7 +94,7 @@ class n1 //基于初始形状的派生形状
   {
     for(let i=0;i<=this.len-1;i++)
     {
-      this.i3[i].ix=this.i3[i].ix+xd[i]*4;
+      this.i3[i].ix=this.i3[i].ix+xd[i]*xd[i];
     }
   }
   rule3_symmx()//控制派生形状的对称规则

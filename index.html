@@ -55,7 +55,7 @@
     {
       background-color: #262121;
       color: #ffffff;
-      padding-top: 5%;
+      margin-top: 0px;
       margin-bottom: 0px;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       height:calc(100vh); 
@@ -104,6 +104,26 @@
   </style>     
 
 </head>
+<script type="module">
+  import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+  const ap={
+    data() {
+      return {
+        name: 'Vue.js'
+      }                                                                                                                                             
+    },
+    methods:
+    {
+      jum()
+      {
+        document.getElementById("app2").scrollIntoView(true);
+        console.log("miaomiao");
+      }
+    }
+  }
+  Vue.createApp(ap).mount('#app')
+  </script>
 <body class="container-fluid">
   <div id="app" class="sample">
     <h1>pattern generator sample</h1>
@@ -113,28 +133,11 @@
     
     <!--<router-view>
     </router-view>-->
-    <script type="module">
-      const ap={
-        data() {
-          return {
-          }                                                                                                                                             
-        },
-        methods:
-        {
-          jum()
-          {
-            document.querySelector("#app2").scrollIntoView(true);
-          }
-        }
-      }
-      Vue.createApp(ap).mount('#but')
-      </script>
-    
-    <button type="button" id="but" @click="jum">点一下试试</button>
 
     
+    <button type="button" id="but" @click="jum">点一下试试</button>
   </div>
-  <div id="app2" class="sample">
+  <div id="app2" class="sample2">
 
   </div>
 </body>
