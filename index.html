@@ -27,20 +27,19 @@
     { 
       padding: 0; 
       margin: 0; 
-      height:calc(100vh); 
+      height:calc(100vh)*2; 
       width:100%;
-      background-color: #262121;
       text-align: center;
       overflow: auto;
-      
+      background: linear-gradient(180deg,#100c29,#120974);
     } 
     ::-webkit-scrollbar {
   display: none; 
 }
 
+  
     .sample
     {
-      background-color: #262121;
       color: #ffffff;
       padding-top: 20%;
       margin-bottom: 0px;
@@ -53,14 +52,27 @@
 
     .sample2
     {
-      background-color: #262121;
       color: #ffffff;
       margin-top: 0px;
       margin-bottom: 0px;
+      padding-top: 0px;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      height:calc(100vh); 
+      height:calc(100vh)*0.75; 
       display: block;
       text-align: center;
+    }
+
+    .sample3
+    {
+      color: #ffffff;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 3%;
+      padding-bottom: 3%;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      height:calc(100vh)*0.25; 
+      display: block;
+      text-align: center; 
     }
 
     h1
@@ -74,7 +86,6 @@
     {
       height: 3%;
       display: block;
-      background-color: #262121;
     }
 
     input
@@ -101,6 +112,18 @@
       background:linear-gradient(115deg,#FF87D1,#fcb0db,#dcfefd,#A9FCFC);    
     }
 
+    button:hover
+    {
+      text-align: center;
+      width:150px;
+      height:40px;
+      font-size: 12pt;
+      letter-spacing: 4pt;
+      border-radius: 40px;
+      font-weight: bold;
+      background:#ffffff;    
+    }
+
   </style>     
 
 </head>
@@ -118,28 +141,39 @@
       jum()
       {
         document.getElementById("app2").scrollIntoView(true);
-        console.log("miaomiao");
+        console.log("jumpsuccessful");
+      },
+      jum2()
+      {
+        document.getElementById("app").scrollIntoView(true);
+        console.log("jumpsuccessful");
       }
     }
   }
   Vue.createApp(ap).mount('#app')
   </script>
-<body class="container-fluid">
-  <div id="app" class="sample">
-    <h1>pattern generator sample</h1>
 
-    <input id="inp" placeholder="请输入手机号/身份证号/出生日期等数字信息">
+<body class="container-md">
+  <div id="app" class="sample">
+    <h1><img id="logo" class="col-md-6 mx-auto"  src="logo.png"></h1>
+    <div class="col-md-5 mx-auto">
+      <input type="text" class="form-control rounded-pill" id="inp" placeholder="请输入手机号/身份证号/出生日期等数字信息">
+    </div>
     <p></p>
     
     <!--<router-view>
     </router-view>-->
 
     
-    <button type="button" id="but" @click="jum">点一下试试</button>
+    <button type="button" id="but" class="border border-0" @click="jum">生成图案</button>
   </div>
-  <div id="app2" class="sample2">
+  <div id="app2" class="col-md-8 mx-auto">
+  </div>
+  <div id="app3" class="sample3">
+    <button type="button" id="but3" class="border border-0">保存结果</button>
+    <button type="button" id="but2" class="border border-0" @click="jum2">再做一张</button>
+  </div>
 
-  </div>
 </body>
 
 

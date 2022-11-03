@@ -11,7 +11,7 @@ class i1//初始形状1 点
   { 
      strokeWeight(this.sw);
      stroke(this.c1);
-     point(floor(width * 0.5) + this.ix, floor(height * 0.5)-this.iy);
+     point(floor(width * 0.5) + this.ix, round((floor(height * 0.5)+this.iy)%height));
    }
    rule1_copy()// 规则1 复制形状 
   {
@@ -109,6 +109,8 @@ class n1 //基于初始形状的派生形状
 var mes;
 var cavas;
 var but;
+var dih;
+var but2;
 
 function changestr()
 {
@@ -125,6 +127,12 @@ function changestr()
   }
   console.log(mes);
   drawtheshape(mes);
+}
+
+function savetheimage()
+{
+  saveCanvas(cavas, 'myCanvas', 'jpg');
+  console.log(save);
 }
 
 function drawtheshape(st)
@@ -156,12 +164,16 @@ function drawtheshape(st)
   var co2 = color((ch+deltach)%360,cs+deltacs,cv+deltacv);
   
   var s1, s2;
-  s1=new n1(100,-300,1,co,co2,strrr.length,(sum%3+1)*15);
+
+  dih=(sum%3+1)*5*(strrr.length-1);
+  console.log(dih);
+  s1=new n1((sum%3+1)*90,floor(dih*0.5)*-1,sum%2+1,co,co2,strrr.length,(sum%3+1)*5);
   s1.rule2_scale(dis2);
   s2 = s1.rule1_copy();
   s2.rule2_scale(dis2);
   s2.rule3_symmx();
-
+  
+  colorMode(HSB, 360, 100, 100);
   background(color(0,15,15));
 
   for (var j = 0; j <= strrr.length - 1; j++) {
@@ -169,7 +181,8 @@ function drawtheshape(st)
           var col1 = s1.i3[j].c1;
           var col2 = s2.i3[k].c1;
           var newc2 = lerpColor(col1, col2, 0.5);
-          var c = new i2(floor(width * 0.5) + s1.i3[j].ix, floor(height * 0.5)-s1.i3[j].iy, floor(width * 0.5) + s2.i3[k].ix, floor(height * 0.5)-s2.i3[k].iy, s1.sw, newc2);
+          var c = new i2(floor(width * 0.5) + s1.i3[j].ix, round((floor(height * 0.5)+s1.i3[j].iy)%height), floor(width * 0.5) + s2.i3[k].ix, round((floor(height * 0.5)+s2.i3[k].iy)%height), s1.sw, newc2);
+          console.log(c.iy1);
           c.drawashape();
       }
   }
@@ -186,7 +199,9 @@ function setup() {
     mes="23423465476978452343578978070";
     but=select('#but');
     but.mousePressed(changestr);
-    cavas=createCanvas(1500, 1500);
+    but2=select('#but3');
+    but2.mousePressed(savetheimage);
+    cavas=createCanvas(windowWidth*0.4, windowHeight*0.75);
     cavas.parent('app2');
     colorMode(HSB, 360, 100, 100);
     background(color(0,15,15));
@@ -195,13 +210,17 @@ function setup() {
     smooth();
     noLoop();
 
+    
+
 }
 
 function draw() {
   drawtheshape(mes);
 }
 
-
+function windowResized() {
+  resizeCanvas(windowWidth*0.4, windowHeight*0.75);
+}
 
 function initializeFields() {
     ix = 0;
