@@ -219,6 +219,7 @@ function draw() {
 }
 
 function windowResized() {
+  console.log(windowWidth);
   resizeCanvas(windowWidth*0.4, windowHeight*0.75);
 }
 
